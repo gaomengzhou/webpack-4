@@ -1,0 +1,28 @@
+{
+  "plugins": [
+    "@babel/plugin-syntax-dynamic-import"
+    // [
+    //   "@babel/plugin-transform-runtime",
+    //   {
+    //     "absoluteRuntime": false,
+    //     "corejs": 3,
+    //     "helpers": true,
+    //     "regenerator": true
+    //   }
+    // ]
+  ],
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "chrome": "67",
+          "safari": "11.1"
+        },
+        "useBuiltIns": "usage",
+        "corejs": "3"
+      }
+    ],
+    "@babel/preset-react"
+  ]
+}
