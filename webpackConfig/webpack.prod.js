@@ -1,7 +1,6 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const { merge } = require("webpack-merge");
-const commonConfig = require("./webpack.common.js");
+
 const prodConfig = {
   mode: "production",
   devtool: "cheap-module-source-map", // "cheap-module-source-map"
@@ -42,4 +41,4 @@ const prodConfig = {
     chunkFilename: "[name].[contenthash].chunk.js",
   },
 };
-module.exports = merge(commonConfig, prodConfig);
+module.exports = prodConfig;

@@ -1,7 +1,12 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-module.exports = {
+const webpack = require("webpack");
+const { merge } = require("webpack-merge");
+const devConfig = require("./webpack.dev");
+const prodConfig = require("./webpack.prod");
+
+const commonConfig = {
   entry: { main: "./src/index.js" },
   resolve: {
     // Add `.ts` and `.tsx` as a resolvable extension.
@@ -11,7 +16,14 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
-      //filename: "h5.html", // filename不写的话默认为index.html 一般不用写
+      // filename: "h5.html", // filename不写的话默认为index.html 一般不用写
+    }),
+    new webpack.ProvidePlugin({
+      // 全局自动引入 'antd' 并赋值给键为antd的变量。
+      antd: "antd",
+      _: "lodash",
+      // 使用库里的某个方法，用数组。['库名'，'库方法']
+      _join: ["lodash", "join"],
     }),
   ],
   module: {
@@ -44,7 +56,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        use: { loader: "babel-loader" },
+        use: [{ loader: "babel-loader" }],
       },
     ],
   },
@@ -78,4 +90,15 @@ module.exports = {
     // publicPath: "www.cdn.com", 默认为('')空
     path: path.resolve(__dirname, "../dist"),
   },
+};
+
+module.exports = (env) => {
+  console.log("env", env);
+  if (env && env.production) {
+    console.log("here");
+    return merge(commonConfig, prodConfig);
+  } else {
+    console.log("that");
+    return merge(commonConfig, devConfig);
+  }
 };

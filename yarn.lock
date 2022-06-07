@@ -2643,6 +2643,14 @@ import-local@^3.0.2:
     pkg-dir "^4.2.0"
     resolve-cwd "^3.0.0"
 
+imports-loader@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/imports-loader/-/imports-loader-4.0.0.tgz#c11574247beca48e6549db1eb603f8939884aca1"
+  integrity sha512-8PPbhk/9CEHd0WWKESw/oYTDhp3So9PWA9OfyIbH3kywIN4uxrWkQ8ux47xpk4yWUKX97Erbws9MFSaBlVvAjg==
+  dependencies:
+    source-map "^0.6.1"
+    strip-comments "^2.0.1"
+
 inflight@^1.0.4:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/inflight/-/inflight-1.0.6.tgz#49bd6331d7d02d0c09bc910a1075ba8165b56df9"
@@ -4064,6 +4072,11 @@ strip-ansi@^6.0.1:
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
   dependencies:
     ansi-regex "^5.0.1"
+
+strip-comments@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/strip-comments/-/strip-comments-2.0.1.tgz#4ad11c3fbcac177a67a40ac224ca339ca1c1ba9b"
+  integrity sha512-ZprKx+bBLXv067WTCALv8SSz5l2+XhpYCsVtSqlMnkAXMWDq+/ekVbl1ghqP9rUHTzv6sm/DwCOiYutU/yp1fw==
 
 strip-final-newline@^2.0.0:
   version "2.0.0"

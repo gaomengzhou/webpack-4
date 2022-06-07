@@ -1,5 +1,3 @@
-const { merge } = require("webpack-merge");
-const commonConfig = require("./webpack.common.js");
 const devConfig = {
   mode: "development",
   devtool: "eval-cheap-module-source-map", // "eval-cheap-module-source-map"
@@ -32,4 +30,4 @@ const devConfig = {
     chunkFilename: "[name].chunk.js",
   },
 };
-module.exports = merge(commonConfig, devConfig);
+module.exports = devConfig;
