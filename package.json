@@ -15,9 +15,9 @@
     "not ie <= 8"
   ],
   "scripts": {
-    "build": "webpack --env production  --config ./webpackConfig/webpack.common.js",
-    "dev": "webpack --config ./webpackConfig/webpack.common.js",
-    "start": "webpack serve --config ./webpackConfig/webpack.common.js"
+    "build": "webpack --config ./webpackConfig/webpack.prod.js",
+    "dev": "webpack --config ./webpackConfig/webpack.dev.js",
+    "start": "webpack serve --config ./webpackConfig/webpack.dev.js"
   },
   "author": "",
   "license": "MIT",
@@ -46,7 +46,6 @@
     "css-minimizer-webpack-plugin": "^4.0.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
-    "imports-loader": "^4.0.0",
     "mini-css-extract-plugin": "^2.6.0",
     "postcss-loader": "^7.0.0",
     "sass": "^1.52.1",
