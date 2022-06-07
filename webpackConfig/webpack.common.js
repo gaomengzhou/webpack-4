@@ -7,7 +7,7 @@ const devConfig = require("./webpack.dev");
 const prodConfig = require("./webpack.prod");
 
 const commonConfig = {
-  entry: { main: "./src/index.js" },
+  entry: { main: "./src/index.tsx" },
   resolve: {
     // Add `.ts` and `.tsx` as a resolvable extension.
     extensions: [".ts", ".tsx", ".js"],
