@@ -93,12 +93,9 @@ const commonConfig = {
 };
 
 module.exports = (env) => {
-  console.log("env", env);
   if (env && env.production) {
-    console.log("here");
     return merge(commonConfig, prodConfig);
   } else {
-    console.log("that");
     return merge(commonConfig, devConfig);
   }
 };

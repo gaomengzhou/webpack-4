@@ -15,6 +15,7 @@
     "not ie <= 8"
   ],
   "scripts": {
+    "serve": "http-server dist",
     "build": "webpack --env production  --config ./webpackConfig/webpack.common.js",
     "dev": "webpack --config ./webpackConfig/webpack.common.js",
     "start": "webpack serve --config ./webpackConfig/webpack.common.js"
@@ -46,6 +47,7 @@
     "css-minimizer-webpack-plugin": "^4.0.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "http-server": "^14.1.1",
     "imports-loader": "^4.0.0",
     "mini-css-extract-plugin": "^2.6.0",
     "postcss-loader": "^7.0.0",
@@ -57,6 +59,7 @@
     "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.9.0",
-    "webpack-merge": "^5.8.0"
+    "webpack-merge": "^5.8.0",
+    "workbox-webpack-plugin": "^6.5.3"
   }
 }
