@@ -1,10 +1,8 @@
-const webpack = require("webpack");
-
 const devConfig = {
   mode: "development",
   devtool: "eval-cheap-module-source-map",
   devServer: {
-    static: "../dist",
+    static: "./dist",
     open: true,
     port: 8080,
   },
@@ -30,7 +28,7 @@ const devConfig = {
       },
     ],
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()],
+
   output: {
     filename: "[name].js",
     chunkFilename: "[name].js",

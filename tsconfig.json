@@ -16,14 +16,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
-    "plugins": [
-      {
-        "name": "typescript-plugin-css-modules",
-        "option": { "customMatcher": "\\.module\\.(c|le|sa|sc)ss$" }
-      }
-    ]
+    "jsx": "react-jsx"
   },
-  "include": ["src"],
-  "exclude": ["src/setupProxy.js"]
+  "include": ["src"]
 }

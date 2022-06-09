@@ -7,10 +7,20 @@ const devConfig = require("./webpack.dev");
 
 const commonConfig = {
   entry: {
-    main: "./src/index.js",
+    main: "./src/index.ts",
   },
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        use: {
+          loader: "ts-loader",
+          options: {
+            transpileOnly: true,
+          },
+        },
+        exclude: /node_modules/,
+      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -39,6 +49,9 @@ const commonConfig = {
       },
     ],
   },
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"],
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: "src/index.html",
@@ -46,9 +59,9 @@ const commonConfig = {
     new CleanWebpackPlugin(),
   ],
   optimization: {
-    runtimeChunk: {
-      name: "runtime",
-    },
+    // runtimeChunk: {
+    //   name: "runtime",
+    // },
     usedExports: true,
     splitChunks: {
       chunks: "all",
