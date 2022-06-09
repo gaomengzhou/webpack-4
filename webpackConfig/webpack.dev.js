@@ -3,6 +3,7 @@ const devConfig = {
   devtool: "eval-cheap-module-source-map",
   devServer: {
     static: "../dist",
+    historyApiFallback: true, // 解决react-router-dom使用BrowserRouter跳转错误的问题
     open: false,
     port: 3000,
     proxy: {
