@@ -1,20 +1,20 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const { merge } = require("webpack-merge");
-const prodConfig = require("./webpack.prod");
-const devConfig = require("./webpack.dev");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { merge } = require('webpack-merge');
+const prodConfig = require('./webpack.prod');
+const devConfig = require('./webpack.dev');
 
 const commonConfig = {
   entry: {
-    main: "./src/index",
+    main: './src/index',
   },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
         use: {
-          loader: "ts-loader",
+          loader: 'ts-loader',
           options: {
             transpileOnly: true,
           },
@@ -26,17 +26,17 @@ const commonConfig = {
         exclude: /node_modules/,
         use: [
           {
-            loader: "babel-loader",
+            loader: 'babel-loader',
           },
         ],
       },
       {
         test: /\.(jpg|png|gif)$/,
         use: {
-          loader: "url-loader",
+          loader: 'url-loader',
           options: {
-            name: "[name]_[hash].[ext]",
-            outputPath: "images/",
+            name: '[name]_[hash].[ext]',
+            outputPath: 'images/',
             limit: 10240,
           },
         },
@@ -44,17 +44,17 @@ const commonConfig = {
       {
         test: /\.(eot|ttf|svg)$/,
         use: {
-          loader: "file-loader",
+          loader: 'file-loader',
         },
       },
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js", ".jsx"],
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "src/index.html",
+      template: 'src/index.html',
     }),
     new CleanWebpackPlugin(),
   ],
@@ -64,26 +64,25 @@ const commonConfig = {
     // },
     usedExports: true,
     splitChunks: {
-      chunks: "all",
+      chunks: 'all',
       cacheGroups: {
         vendors: {
           test: /[\\/]node_modules[\\/]/,
           priority: -10,
-          name: "vendors",
+          name: 'vendors',
         },
       },
     },
   },
   performance: false,
   output: {
-    path: path.resolve(__dirname, "../dist"),
+    path: path.resolve(__dirname, '../dist'),
   },
 };
 
 module.exports = (env) => {
   if (env && env.production) {
     return merge(commonConfig, prodConfig);
-  } else {
-    return merge(commonConfig, devConfig);
   }
+  return merge(commonConfig, devConfig);
 };
