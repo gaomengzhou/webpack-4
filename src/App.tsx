@@ -1,5 +1,5 @@
 import asiox from 'axios';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import Nodefind from './404';
 import HomePage from './Home';
