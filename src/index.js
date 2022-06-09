@@ -1,6 +1,12 @@
-import "./style.css";
-document.addEventListener("click", async () => {
-  const func = (await import(/* webpackPrefetch: true */ "./click.js")).default;
-  func();
-});
-console.log(123);
+console.log('hello, this is dell');
+
+if ('serviceWorker' in navigator) {
+	window.addEventListener('load', () => {
+		navigator.serviceWorker.register('/service-worker.js')
+			.then(registration => {
+				console.log('service-worker registed');
+			}).catch(error => {
+				console.log('service-worker register error');
+			})
+	})
+}

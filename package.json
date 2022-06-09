@@ -15,9 +15,8 @@
     "not ie <= 8"
   ],
   "scripts": {
-    "build": "webpack --config ./webpackConfig/webpack.prod.js",
-    "dev": "webpack --config ./webpackConfig/webpack.dev.js",
-    "start": "webpack serve --config ./webpackConfig/webpack.dev.js"
+    "build": "webpack --config ./webpackConfig/webpack.common.js",
+    "start": "webpack serve --env production --config ./webpackConfig/webpack.common.js"
   },
   "author": "",
   "license": "MIT",

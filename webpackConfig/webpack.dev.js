@@ -1,35 +1,40 @@
-const { merge } = require("webpack-merge");
-const commonConfig = require("./webpack.common.js");
+const webpack = require("webpack");
+
 const devConfig = {
   mode: "development",
-  devtool: "eval-cheap-module-source-map", // "eval-cheap-module-source-map"
+  devtool: "eval-cheap-module-source-map",
   devServer: {
     static: "../dist",
     open: true,
-    hot: true,
+    port: 8080,
   },
   module: {
     rules: [
       {
-        test: /\.(sa|sc|c)ss$/,
+        test: /\.scss$/,
         use: [
           "style-loader",
           {
             loader: "css-loader",
             options: {
-              // modules: true,
               importLoaders: 2,
             },
           },
-          "postcss-loader",
           "sass-loader",
+          "postcss-loader",
         ],
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader", "postcss-loader"],
       },
     ],
   },
+  plugins: [new webpack.HotModuleReplacementPlugin()],
   output: {
     filename: "[name].js",
-    chunkFilename: "[name].chunk.js",
+    chunkFilename: "[name].js",
   },
 };
-module.exports = merge(commonConfig, devConfig);
+
+module.exports = devConfig;
