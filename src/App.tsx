@@ -3,7 +3,10 @@ import { useEffect } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import Nodefind from './404';
 import HomePage from './Home';
+import Layout from './Layout';
 import ListPage from './List';
+import ListOne from './ListOne';
+import ListTow from './ListTow';
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -11,10 +14,16 @@ const App: React.FC = () => {
   }, []);
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/list" element={<ListPage />} />
-      <Route path="nodefind" element={<Nodefind />} />
-      <Route path="*" element={<Navigate to="nodefind" />} />
+      <Route element={<Layout />}>
+        <Route path="/" element={<HomePage />} />
+        <Route path="list">
+          <Route index element={<ListPage />} />
+          <Route path="list-one" element={<ListOne />} />
+          <Route path="list-two" element={<ListTow />} />
+        </Route>
+        <Route path="nodefind" element={<Nodefind />} />
+        <Route path="*" element={<Navigate to="nodefind" />} />
+      </Route>
     </Routes>
   );
 };

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const ListPage: React.FC = () => (
   <div>
-    <div>ListPage</div>
+    <h1>ListPage</h1>
     <Link to="/">goHome</Link>
   </div>
 );
