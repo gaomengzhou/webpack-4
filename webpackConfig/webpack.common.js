@@ -7,7 +7,7 @@ const devConfig = require("./webpack.dev");
 
 const commonConfig = {
   entry: {
-    main: "./src/index.ts",
+    main: "./src/index",
   },
   module: {
     rules: [
@@ -50,7 +50,7 @@ const commonConfig = {
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: [".tsx", ".ts", ".js", ".jsx"],
   },
   plugins: [
     new HtmlWebpackPlugin({
