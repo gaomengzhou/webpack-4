@@ -8,6 +8,8 @@ const devConfig = require('./webpack.dev');
 const commonConfig = {
   entry: {
     main: './src/index',
+    // 多页面打包例子-配合HtmlWebpackPlugin使用
+    // details: './src/deteil',
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
@@ -56,7 +58,16 @@ const commonConfig = {
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/index.html',
+      filename: 'index.html',
+      // 多页面打包例子-配合entry使用
+      // chunks: ['main', 'vendors'],
     }),
+    // 多页面打包例子-配合entry使用
+    // new HtmlWebpackPlugin({
+    //   template: 'src/index.html',
+    //   filename: 'details.html',
+    //   chunks: ['details', 'vendors'],
+    // }),
     new CleanWebpackPlugin(),
   ],
   optimization: {
