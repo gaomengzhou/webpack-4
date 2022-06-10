@@ -8,7 +8,7 @@ const prodConfig = {
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
@@ -17,13 +17,9 @@ const prodConfig = {
               importLoaders: 2,
             },
           },
-          'sass-loader',
           'postcss-loader',
+          'sass-loader',
         ],
-      },
-      {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
       },
     ],
   },

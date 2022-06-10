@@ -27,7 +27,7 @@ const devConfig = {
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [
           'style-loader',
           {
@@ -36,13 +36,9 @@ const devConfig = {
               importLoaders: 2,
             },
           },
-          'sass-loader',
           'postcss-loader',
+          'sass-loader',
         ],
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
     ],
   },
