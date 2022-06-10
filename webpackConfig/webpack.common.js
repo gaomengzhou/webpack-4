@@ -76,6 +76,7 @@ const commonConfig = {
   },
   performance: false,
   output: {
+    publicPath: '/', // 解决react-router-dom使用BrowserRouter跳转错误的问题
     path: path.resolve(__dirname, '../dist'),
   },
 };

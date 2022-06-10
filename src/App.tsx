@@ -14,16 +14,16 @@ const App: React.FC = () => {
   }, []);
   return (
     <Routes>
-      <Route element={<Layout />}>
-        <Route path="/" element={<HomePage />} />
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
         <Route path="list">
           <Route index element={<ListPage />} />
-          <Route path="list-one" element={<ListOne />} />
-          <Route path="list-two" element={<ListTow />} />
+          <Route path="one" element={<ListOne />} />
+          <Route path=":id" element={<ListTow />} />
         </Route>
-        <Route path="nodefind" element={<Nodefind />} />
-        <Route path="*" element={<Navigate to="nodefind" />} />
       </Route>
+      <Route path="nodefind" element={<Nodefind />} />
+      <Route path="*" element={<Navigate to="nodefind" />} />
     </Routes>
   );
 };

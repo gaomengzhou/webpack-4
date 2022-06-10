@@ -2,8 +2,12 @@ const devConfig = {
   mode: 'development',
   devtool: 'eval-cheap-module-source-map',
   devServer: {
-    static: '../dist',
-    historyApiFallback: true, // 解决react-router-dom使用BrowserRouter跳转错误的问题
+    static: '/dist',
+    // historyApiFallback: true, // 解决react-router-dom使用BrowserRouter跳转错误的问题,output.publicPath设置为'/'
+    // (下面的写法也行，区别去https://webpack.js.org/configuration/dev-server/#devserverhistoryapifallback看)
+    historyApiFallback: {
+      disableDotRule: true,
+    },
     open: false,
     port: 3000,
     proxy: {
@@ -44,6 +48,7 @@ const devConfig = {
   },
 
   output: {
+    publicPath: '/', // 解决react-router-dom使用BrowserRouter跳转错误的问题
     filename: '[name].js',
     chunkFilename: '[name].js',
   },

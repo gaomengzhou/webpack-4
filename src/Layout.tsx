@@ -4,10 +4,10 @@ function Layout() {
   return (
     <div>
       <nav>
-        <Link style={{ marginRight: 20 }} to={'/'}>
+        <Link style={{ marginRight: 20 }} to="/">
           HOME
         </Link>
-        <Link to={'/list'}>LIST</Link>
+        <Link to="/list">LIST</Link>
       </nav>
       <Outlet />
       <footer>FOOTER</footer>
