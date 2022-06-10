@@ -8,7 +8,7 @@ import ListPage from './List';
 import ListOne from './ListOne';
 import ListTow from './ListTow';
 
-const App: React.FC = () => {
+const App: React.FC = (): JSX.Element => {
   useEffect(() => {
     asiox.get('/react/api/header.json').then((res) => console.log('res', res));
   }, []);

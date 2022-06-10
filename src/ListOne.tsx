@@ -1,7 +1,4 @@
-import React from 'react';
-
 function ListOne() {
-  return <h1>ListOne</h1>;
+  return <div>ListOne</div>;
 }
-
 export default ListOne;

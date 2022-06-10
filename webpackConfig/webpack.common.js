@@ -9,6 +9,10 @@ const commonConfig = {
   entry: {
     main: './src/index',
   },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
+    // mainFiles:['index']
+  },
   module: {
     rules: [
       {
@@ -22,7 +26,7 @@ const commonConfig = {
         exclude: /node_modules/,
       },
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: [
           {
@@ -48,9 +52,6 @@ const commonConfig = {
         },
       },
     ],
-  },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.jsx'],
   },
   plugins: [
     new HtmlWebpackPlugin({
