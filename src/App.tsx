@@ -1,13 +1,13 @@
 import asiox from 'axios';
 import { useEffect } from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
 import MyRoutes from './Routes';
-import Nodefind from './404';
-import Layout from './Layout';
-import ListPage from './List';
-import ListOne from './ListOne';
-import ListTow from './ListTow';
-import HomePage from './Home';
+// import { Navigate, Route, Routes } from 'react-router-dom';
+// import Nodefind from './404';
+// import Layout from './Layout';
+// import ListPage from './List';
+// import ListOne from './ListOne';
+// import ListTow from './ListTow';
+// import HomePage from './Home';
 
 const App: React.FC = (): JSX.Element => {
   useEffect(() => {
