@@ -1,4 +1,4 @@
 function ListOne() {
-  return <div>ListOne</div>;
+  return <h1>ListOne</h1>;
 }
 export default ListOne;

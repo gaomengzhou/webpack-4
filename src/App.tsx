@@ -1,6 +1,6 @@
 import asiox from 'axios';
 import { useEffect } from 'react';
-import MyRoutes from './Routes';
+import CustomRoutes from './Routes.config';
 // import { Navigate, Route, Routes } from 'react-router-dom';
 // import Nodefind from './404';
 // import Layout from './Layout';
@@ -14,7 +14,7 @@ const App: React.FC = (): JSX.Element => {
     asiox.get('/react/api/header.json').then((res) => console.log('res', res));
   }, []);
   return (
-    <MyRoutes />
+    <CustomRoutes />
     // <Routes>
     //   <Route path="/" element={<Layout />}>
     //     <Route index element={<HomePage />} />
